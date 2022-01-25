@@ -21,7 +21,7 @@ else:
 # I have some Python background, so I know it'll be more efficient to use a for loop for the next step.
 # However, I understand the same thing could be accomplished using a series of if statements. 
 
-print("\n" + "Searching for " + magic_character + " in " + magic_word + "\n")
+print("Searching for " + magic_character + " in " + magic_word)
 
 ticker = 0  # Increasing ticker that allows for iteration through magic word
 instances = 0  # Running counter for instances of magic character
@@ -34,7 +34,9 @@ for char in magic_word:
     else:
         ticker += 1  # Index position checked will increase regardless of magic character being found or not
 
-if instances > 0:
+if instances >= 2:
+    print("\n" + str(instances) + " instances of " + magic_character + " found in " + magic_word)
+elif instances == 1:
     print("\n" + str(instances) + " instance of " + magic_character + " found in " + magic_word)
 else:
     print("\n" + "No instances of " + magic_character + " found in " + magic_word)
