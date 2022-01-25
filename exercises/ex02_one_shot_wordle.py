@@ -11,7 +11,7 @@ input_test = True
 
 # Variable input_test is a bool initialized as True
 # Redefines as False to terminate while loop below once guess of correct length is made
-# Also redefines variable guess once given input of correct length
+# Loop redefines variable {guess} once given input of correct length
 while input_test:
     if len(guess) == word_length:
         input_test = False
@@ -24,7 +24,7 @@ GREEN_BOX = "\U0001F7E9"
 YELLOW_BOX = "\U0001F7E8"
 
 i = 0  # Counter for main while loop below used for index checks and eventual loop termination
-output_string = ""  # Blank string that will be appended using constants above ^^ and eventually printed as output
+output_string = ""  # Blank string that will be appended using constants above ^^^ and eventually printed as output
 
 while i < word_length:
     if guess[i] == secret_word[i]:
@@ -35,7 +35,7 @@ while i < word_length:
 
         # While loop below keeps indexed character of the guess constant while
         # Looping through and checking for matches with each character instance of secret word
-        while yellow_counter < word_length and yellow_test:
+        while yellow_counter < word_length and yellow_test:  # The yellow_test condition isn't techinically necessary for while loop but makes algorithm more efficient by allowing it to terminate early
             if guess[i] == secret_word[yellow_counter]:
                 yellow_test = False
             else: 
