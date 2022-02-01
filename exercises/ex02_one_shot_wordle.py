@@ -31,19 +31,19 @@ while i < word_length:
         output_string += GREEN_BOX
     else: 
         yellow_counter = 0
-        yellow_test = True
+        yellow_test = False
 
         # While loop below keeps indexed character of the guess constant while
         # Looping through and checking for matches with each character instance of secret word
-        while yellow_counter < word_length and yellow_test:  # The yellow_test condition isn't techinically necessary for while loop but makes algorithm more efficient by allowing it to terminate early
+        while yellow_counter < word_length and not(yellow_test): 
             if guess[i] == secret_word[yellow_counter]:
-                yellow_test = False
+                yellow_test = True
             else: 
                 yellow_counter += 1
 
         # If matching characters are found at some point between the two variables, append a yellow box
         # Otherwise, append a white box
-        if not(yellow_test):
+        if yellow_test:
             output_string += YELLOW_BOX
         else:
             output_string += WHITE_BOX
