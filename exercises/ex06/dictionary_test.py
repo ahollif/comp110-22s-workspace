@@ -30,7 +30,7 @@ def test_count_empty() -> None:
 
 
 def test_count_duplicates() -> None:
-    """Functionality check for lists with unique values."""
+    """Functionality check for lists with duplicate values."""
     test: list[str] = ['MegaWeeb', "MegaWeeb", "MegaWeeb", "MegaWeeb"]
     assert count(test) == {'MegaWeeb': 4}
 

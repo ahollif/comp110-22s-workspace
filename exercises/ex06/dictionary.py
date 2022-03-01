@@ -30,7 +30,7 @@ def count(strings: list[str]) -> dict[str, int]:
 
 
 def favorite_color(colors: dict[str, str]) -> str:
-    """Finds color (or more generally, string) most common in a dictionary."""
+    """Finds color (or more generally, string value) most common in a dictionary."""
     if colors == dict(): 
         return 'The dictionary is empty.'
     key_list: list[str] = list()
