@@ -49,6 +49,8 @@ def columnar(row_table: list[dict[str, str]]) -> dict[str, list[str]]:
 
 def head(column_table: dict[str, list[str]], n: int) -> dict[str, list[str]]:
     """Returns a column-table with only parameter n first rows visible."""
+    if len(column_table) <= n:
+        return(column_table)
     result: dict[str, list[str]] = {}
     for column in column_table:
         new_list: list[str] = []
@@ -67,6 +69,7 @@ def select(column_table: dict[str, list[str]], names: list[str]) -> dict[str, li
 
 
 def concat(c_table1: dict[str, list[str]], c_table2: dict[str, list[str]]) -> dict[str, list[str]]:
+    """Concatenates two column_tables."""
     result: dict[str, list[str]] = {}
     for key in c_table1: 
         result[key] = c_table1[key]
@@ -80,7 +83,7 @@ def concat(c_table1: dict[str, list[str]], c_table2: dict[str, list[str]]) -> di
 
 
 def count(column: list[str]) -> dict[str, int]:
-    "Returns unique values from lists with their counts in a dict."
+    """Returns unique values from lists with their counts in a dict."""
     result: dict[str, int] = {}
     for item in column:
         if item not in result:
