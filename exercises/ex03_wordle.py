@@ -50,7 +50,7 @@ def input_guess(number: int) -> str:
 def main() -> None:
     """The entrypoint of the program and main game loop."""
     turn = 1  # Used as a turn counter and also for eventual termination of the while loop below
-    possible_words: list[str] = ["rhonda", "bitch", "pussy", "codes", "mommy", "titty", "dickass"]
+    possible_words: list[str] = ["point", "house", "codes", "mommy", "chest", "drape"]
     SECRET = possible_words[randint(0, (len(possible_words) - 1))]
     while turn <= 6:
         print(f"==Turn {turn}/6==")
